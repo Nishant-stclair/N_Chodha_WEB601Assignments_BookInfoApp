@@ -1,0 +1,27 @@
+<!-- src/app/content-card/content-card.component.html -->
+<div class="content-card">
+  <header class="title">{{ title }}</header>
+
+  <ng-container *ngIf="imgURL">
+    <img class="image" [src]="imgURL" alt="Image">
+  </ng-container>
+
+  <ng-container *ngIf="description">
+    <p class="description">Description: {{ description }}</p>
+  </ng-container>
+
+  <ng-container *ngIf="creator">
+    <p class="creator">Creator: {{ creator }}</p>
+  </ng-container>
+
+  <ng-container *ngIf="type">
+    <p class="type">Type: {{ type }}</p>
+  </ng-container>
+
+  <ng-container *ngIf="tags && tags.length">
+    <div class="tags">
+      <span *ngFor="let tag of tags" class="tag">{{ tag }}</span>
+    </div>
+  </ng-container>
+
+</div>
