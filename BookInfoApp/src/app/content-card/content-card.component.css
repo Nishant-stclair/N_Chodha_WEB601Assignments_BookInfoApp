@@ -1,0 +1,76 @@
+:host {
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  margin: 15px;
+  padding: 15px;
+}
+
+.content-card {
+  width: auto; /* Set a specific width */
+  border: 1px solid #ccc;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease;
+}
+
+.content-card:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 12px;
+  padding: 12px;
+}
+
+.image {
+  max-width: 100%;
+  height: 300px;
+  margin-bottom: 12px;
+  cursor: pointer;
+}
+
+.description {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.creator,
+.type {
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 8px;
+}
+
+.tags {
+  margin-top: 12px;
+}
+
+.tag {
+  display: inline-block;
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  margin-right: 6px;
+  margin-bottom: 6px;
+}
+
+.tag:hover {
+  background-color: #007bff;
+  color: #fff;
+}
+
+.content-card.highlighted {
+  border: 2px solid green;
+}
+.novel {
+  background-color: lightgreen;
+}
+
+.fantasy {
+  background-color: lightblue;
+}
+
+.dystopian-fiction {
+  background-color: lightcoral;
+}

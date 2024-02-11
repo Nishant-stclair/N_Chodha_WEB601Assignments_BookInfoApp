@@ -1,0 +1,31 @@
+<div class="content-card">
+  <header class="title">{{ title }}</header>
+
+  <ng-container *ngIf="imgURL">
+    <img class="image" [src]="imgURL" alt="Image">
+  </ng-container>
+
+  <ng-container *ngIf="description">
+    <p class="description">Description: {{ description }}</p>
+  </ng-container>
+
+  <ng-container *ngIf="creator">
+    <p class="creator">Creator: {{ creator }}</p>
+  </ng-container>
+
+  <ng-container *ngIf="type !== undefined">
+    <p class="type" [ngClass]="{
+    'novel': type.toLowerCase().includes('novel'),
+    'fantasy': type.toLowerCase().includes('fantasy'),
+    'dystopian-fiction': type.toLowerCase().includes('dystopian fiction')
+  }">Type: {{ type }}</p>
+  </ng-container>
+  <ng-container *ngIf="type === undefined">
+    <p class="type empty">Type: None</p>
+  </ng-container>
+  <ng-container *ngIf="tags && tags.length">
+    <div class="tags">
+      <span *ngFor="let tag of tags" class="tag">{{ tag }}</span>
+    </div>
+  </ng-container>
+</div>
