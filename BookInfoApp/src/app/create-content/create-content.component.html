@@ -1,0 +1,10 @@
+<div>
+    <input type="number" [(ngModel)]="id" placeholder="ID">
+    <input type="text" [(ngModel)]="title" placeholder="Title">
+    <input type="text" [(ngModel)]="description" placeholder="Description">
+    <input type="text" [(ngModel)]="creator" placeholder="Creator">
+    <input type="text" [(ngModel)]="imgURL" placeholder="Image URL">
+    <input type="text" [(ngModel)]="type" placeholder="Type">
+    <button (click)="addContent()">Add Content</button>
+    <p [ngStyle]="{'color': errorMessage ? 'red' : 'transparent', 'font-weight': 'bold'}">{{ errorMessage }}</p>
+</div>

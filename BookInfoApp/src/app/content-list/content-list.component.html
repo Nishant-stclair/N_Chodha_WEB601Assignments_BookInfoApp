@@ -1,0 +1,39 @@
+<app-create-content (contentAdded)="onContentAdded($event)"></app-create-content>
+
+<div class="search-container">
+  <input type="text" [(ngModel)]="searchTitle" placeholder="Enter title">
+  <button (click)="searchContent()">Search</button>
+</div>
+
+<!-- Display search result message -->
+<p [ngStyle]="{'color': searchResultExists ? 'green' : 'red'}">
+  {{ searchResultMessage }}
+</p>
+
+<!-- Display content cards -->
+<div *ngFor="let content of contentList | titleCase">
+  <app-content-card
+    [id]="content.id"
+    [title]="content.title"
+    [description]="content.description"
+    [creator]="content.creator"
+    [imgURL]="content.imgURL"
+    [type]="content.type"
+    [ngClass]="{'highlighted': content.highlighted}"
+  ></app-content-card>
+</div>
+
+<!-- Display content for each type separately -->
+<div *ngFor="let type of uniqueTypes()">
+  <h2>{{ type }}</h2>
+  <div *ngFor="let content of contentList | titleCase:type">
+    <app-content-card
+      [id]="content.id"
+      [title]="content.title"
+      [description]="content.description"
+      [creator]="content.creator"
+      [imgURL]="content.imgURL"
+      [type]="content.type"
+    ></app-content-card>
+  </div>
+</div>
